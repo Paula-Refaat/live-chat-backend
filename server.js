@@ -3,12 +3,12 @@ const express = require("express");
 const http = require("http");
 const cors = require("cors");
 const path = require("path");
-const dbConnection = require("./config/database");
-const userRoute = require("./routes/user");
+// const dbConnection = require("./config/database");
+// const userRoute = require("./routes/user");
 
 const socketIOServer = require("./socket/socketio-server");
 
-dbConnection();
+// dbConnection();
 
 const app = express();
 const CompleteServer = http.createServer(app);
@@ -27,7 +27,7 @@ app.options("*", cors());
 //For deploy only
 // app.use(express.static(path.join("public")));
 
-app.use("/auth", userRoute);
+// app.use("/auth", userRoute);
 
 //for deploy only
 // app.use((req, res, next) => {
