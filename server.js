@@ -26,7 +26,12 @@ app.use(cors());
 app.options("*", cors());
 
 //For deploy only
+// Serving static files (if needed)
 app.use(express.static(path.join(__dirname, 'build')));
+
+app.use((req, res, next) => {
+  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+});
 
 // app.use("/auth", userRoute);
 
