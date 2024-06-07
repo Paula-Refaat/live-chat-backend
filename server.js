@@ -26,7 +26,7 @@ app.use(cors());
 app.options("*", cors());
 
 //For deploy only
-// app.use(express.static(path.join("public")));
+app.use(express.static(path.join(__dirname, 'build')));
 
 // app.use("/auth", userRoute);
 
